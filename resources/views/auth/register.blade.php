@@ -11,7 +11,7 @@
       <form action="{{route('register')}}" method="post" class="form-element">
         @csrf
         <div class="form-group has-feedback">
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus placeholder="{{ __('Name') }}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autofocus placeholder="{{ __('Name') }}">
             <span class="ion ion-email form-control-feedback"></span>
               @error('name')
                   <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
               @enderror
           </div>
         <div class="form-group has-feedback">
-          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="{{ __('Email Address') }}">
+          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder="{{ __('Email Address') }}">
           <span class="ion ion-email form-control-feedback"></span>
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
             @enderror
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control @error('password') is-invalid @enderror"  name="password" required autocomplete="current-password" placeholder="{{ __('Password') }}">
+          <input type="password" class="form-control @error('password') is-invalid @enderror"  name="password"  autocomplete="current-password" placeholder="{{ __('Password') }}">
           <span class="ion ion-locked form-control-feedback"></span>
           @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
           @enderror
         </div>
         <div class="form-group has-feedback">
-            <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"  name="password_confirmation" required autocomplete="current-password" placeholder="{{ __('Password confirmation') }}">
+            <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"  name="password_confirmation"  autocomplete="current-password" placeholder="{{ __('Password confirmation') }}">
             <span class="ion ion-locked form-control-feedback"></span>
             @error('password_confirmation')
                   <span class="invalid-feedback" role="alert">
