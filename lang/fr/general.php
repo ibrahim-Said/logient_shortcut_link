@@ -26,6 +26,7 @@ return [
     "Delete"=>"Supprimer",
     "Cancel"=>"Annuler",
     "Nice !"=>"Bien !",
-    "shortcut-links"=>"Lien raccourcis"
+    "shortcut-links"=>"Lien raccourcis",
+    "You have exceeded the maximum number of shortened links per user"=>"Vous avez dépassé le nombre maximum des liens raccourcis par utilisateur"
 
 ];

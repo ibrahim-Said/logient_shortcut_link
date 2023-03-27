@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MustHasFiveShortcutLink;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ShortcutLinkRequest extends FormRequest
@@ -24,7 +25,7 @@ class ShortcutLinkRequest extends FormRequest
     public function rules()
     {
         return [
-            "name"=>"required",
+            "name"=>["required",new MustHasFiveShortcutLink(auth()->user())],
             "link"=>"required"
         ];
     }

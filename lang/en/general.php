@@ -26,6 +26,7 @@ return [
     "Delete"=>"Delete",
     "Cancel"=>"Cancel",
     "Nice !"=>"Nice !",
-    "shortcut-links"=>"Shortcut links"
+    "shortcut-links"=>"Shortcut links",
+    "You have exceeded the maximum number of shortened links per user"=>"You have exceeded the maximum number of shortened links per user"
 
 ];
