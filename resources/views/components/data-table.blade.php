@@ -15,9 +15,6 @@
 </style>
 @endpush
 <div class="box box-solid bg-warning">
-    {{-- <div class="box-header with-border">
-        <h3 class="box-title">{{ $title }}</h3>
-    </div> --}}
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">
@@ -74,10 +71,11 @@
                 serverSide: true,
                 responsive: true,
                 pageLength: 50,
-                // dom: '<"html5buttons"B>lTfgitp',
+                @if(app()->getLocale()=="fr")
                 "language": {
                     "url": "{{asset('Frensh.json')}}"
                 },
+                @endif
                 buttons: [],
                 ajax: {
                     "url": sspUrl,

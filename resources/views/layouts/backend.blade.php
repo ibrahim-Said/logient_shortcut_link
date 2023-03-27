@@ -28,6 +28,15 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
+                        <li class="dropdown notifications-menu">
+                            
+                                @foreach(config('locale',[]) as $locale)
+                                @if($locale!=app()->getLocale())
+                                <a href="{{route('locale.set',['locale'=>$locale])}}" class="dropdown-toggle">{{strtoupper($locale)}}
+                                </a>
+                                @endif
+                                @endforeach
+                        </li>
                         <!-- User Account -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

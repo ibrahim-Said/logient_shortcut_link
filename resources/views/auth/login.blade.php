@@ -52,6 +52,7 @@
           <!-- /.col -->
           <div class="col-12 text-center">
             <button type="submit" class="btn btn-info btn-block margin-top-10">{{ __('Login') }}</button>
+            <a href="{{url('/register')}}" class="btn btn-warning btn-block margin-top-10">{{ __('Register') }}</a>
           </div>
           <!-- /.col -->
         </div>
