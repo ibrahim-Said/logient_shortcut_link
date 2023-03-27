@@ -9,8 +9,8 @@ class StoreShortcutLinkTask
 {
     public function run(ShortcutLinkRequest $request){
         if(ShortcutLink::count()>=20){
-            $lastShortcutLink=ShortcutLink::latest()->first();
-            app(DeleteShortcutLinkAction::class)->run($lastShortcutLink);
+            $oldShortcutLink=ShortcutLink::first();
+            app(DeleteShortcutLinkAction::class)->run($oldShortcutLink);
         }
         return ShortcutLink::create($request->validated()+['user_id'=>auth()->ID()]);
     }
