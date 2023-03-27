@@ -9,5 +9,12 @@ return [
             'can' => '',
             'sub_menu' => []
         ),
+        array(
+            'link' => 'activity-logs.index',
+            'page_name' => 'activity-logs',
+            'link_icon' => 'fa fa-eye',
+            'can' => '',
+            'sub_menu' => []
+        ),
     ]
 ];

@@ -27,6 +27,13 @@ return [
     "Cancel"=>"Annuler",
     "Nice !"=>"Bien !",
     "shortcut-links"=>"Lien raccourcis",
-    "You have exceeded the maximum number of shortened links per user"=>"Vous avez dépassé le nombre maximum des liens raccourcis par utilisateur"
+    "You have exceeded the maximum number of shortened links per user"=>"Vous avez dépassé le nombre maximum des liens raccourcis par utilisateur",
+    "Ip"=>"Ip",
+    "Agent"=>"Agent",
+    "User"=>"Utilisateur",
+    "Url"=>"Url",
+    "Date"=>"Date",
+    "activity-logs"=>"traçabilité",
+    "list of activity logs"=>"Liste des journaux d'activité"
 
 ];
