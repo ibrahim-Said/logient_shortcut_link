@@ -7,6 +7,7 @@ use App\Actions\ShortcutLink\FindShortcutLinkByUuidAction;
 use App\Actions\ShortcutLink\GetAllShortcutLinksAction;
 use App\Actions\ShortcutLink\StoreShortcutLinkAction;
 use App\Actions\ShortcutLink\UpdateShortcutLinkAction;
+use App\Events\ViewShortcutLink;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ShortcutLinkRequest;
 use App\Models\ShortcutLink;
@@ -26,6 +27,7 @@ class ShortcutLinkController extends Controller
      */
     public function index()
     {
+        event(ViewShortcutLink::class);
         return (new ShortcutLinksViewModel())->view('admin.shortcut-links.index');
     }
 
@@ -101,7 +103,7 @@ class ShortcutLinkController extends Controller
     }
     public function redirect($uuid){
         $shortcutLink=app(FindShortcutLinkByUuidAction::class)->run($uuid);
-        if(!$shortcutLink) return abort(404);
+        if(!$shortcutLink || $shortcutLink->isExpired()) return abort(404);
         return redirect($shortcutLink->link);
     }
 }

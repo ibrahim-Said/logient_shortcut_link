@@ -13,7 +13,7 @@ class GetAllShortcutLinksTask
 
     public function run(Request $request)
     {
-        return datatables()->of(ShortcutLink::query())
+        return datatables()->of(ShortcutLink::notExpired()->ofUser(auth()->user()))
             ->addColumn('shortcut_link', function (ShortcutLink $ShortcutLink) {
                 return '<a href="'.route('shortcut-links.redirect',['uuid'=>$ShortcutLink->uuid]).'">'.route('shortcut-links.redirect',['uuid'=>$ShortcutLink->uuid]).'</a>';
             })

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -31,5 +32,15 @@ class ShortcutLink extends Model
 
     public static function findByUuid($uuid){
         return ShortcutLink::where('uuid',$uuid)->first();
+    }
+
+    public function scopeNotExpired($query){
+        return $query->where('created_at','>',Carbon::now()->subDays(1));
+    }
+    public function scopeOfUser($query,$user){
+        return $query->where('user_id',$user->id);
+    }
+    public function isExpired(){
+        return $this->created_at<Carbon::now()->subDays(1);
     }
 }
