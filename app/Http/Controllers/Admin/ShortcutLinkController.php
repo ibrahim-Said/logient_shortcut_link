@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Actions\ShortcutLink\DeleteShortcutLinkAction;
+use App\Actions\ShortcutLink\FindShortcutLinkByUuidAction;
 use App\Actions\ShortcutLink\GetAllShortcutLinksAction;
 use App\Actions\ShortcutLink\StoreShortcutLinkAction;
 use App\Actions\ShortcutLink\UpdateShortcutLinkAction;
@@ -99,6 +100,8 @@ class ShortcutLinkController extends Controller
         return  app(GetAllShortcutLinksAction::class)->run($request);
     }
     public function redirect($uuid){
-        dd($uuid);
+        $shortcutLink=app(FindShortcutLinkByUuidAction::class)->run($uuid);
+        if(!$shortcutLink) return abort(404);
+        return redirect($shortcutLink->link);
     }
 }

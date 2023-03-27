@@ -28,4 +28,8 @@ class ShortcutLink extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public static function findByUuid($uuid){
+        return ShortcutLink::where('uuid',$uuid)->first();
+    }
 }
