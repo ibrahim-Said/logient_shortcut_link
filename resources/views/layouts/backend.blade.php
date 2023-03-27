@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <x-header></x-header>
 
-<body class="skin-yellow sidebar-mini sidebar-collapse">
+<body class="skin-yellow sidebar-mini">
     <div class="wrapper">
 
         <header class="main-header">
@@ -39,7 +39,11 @@
                                 <li class="user-body">
                                     <div class="row no-gutters">
                                         <div class="col-12 text-left">
-                                            <a href="#"><i class="fa fa-power-off"></i> {{__("general.Logout")}}</a>
+                                            <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();"><i class="fa fa-power-off" ></i> {{__("general.Logout")}}</a>
+                                            
+                                                <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
                                         </div>
                                     </div>
                                     <!-- /.row -->
@@ -91,7 +95,11 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
+        <input type="hidden" name="swal_title" id="swal_title" value="{{__('general.Attention')}}">
+        <input type="hidden" name="swal_text" id="swal_text" value="{{__('general.Do you want to delete this item?')}}">
+        <input type="hidden" name="confirmButtonText" id="confirmButtonText" value="{{__('general.Delete')}}">
+        <input type="hidden" name="cancelButtonText" id="cancelButtonText" value="{{__('general.Cancel')}}">
+        <input type="hidden" name="swal_success_alert_title" id="swal_success_alert_title" value="{{__('general.Nice !')}}">
         <footer class="main-footer">
             &copy; {{ date('Y') }} <a href="/">{{env('APP_NAME')}}</a>.{{__("general.All Rights Reserved")}} .
         </footer>

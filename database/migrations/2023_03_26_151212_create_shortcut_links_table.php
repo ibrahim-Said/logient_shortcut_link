@@ -15,11 +15,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('shortcut_links', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->id();
+            $table->uuid('uuid');
             $table->foreignIdFor(User::class)->nullable();
             $table->string('name');
             $table->string('link');
-            $table->string('shortcut_link');
             $table->timestamps();
         });
     }

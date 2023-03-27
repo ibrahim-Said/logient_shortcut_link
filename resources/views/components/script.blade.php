@@ -49,4 +49,20 @@
 <script src="{{asset('js/main.js')}}"></script>
 <!-- This is select2 -->
 <script src="{{asset('/assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
+<script>
+        @if (session('danger'))
+            Swal.fire({
+            text: '{{ session('danger') }}',
+            type: 'danger',
+            confirmButtonColor: "#9E0B0F"
+            });
+        @endif
+
+        @if (session('success'))
+            Swal.fire({
+            text: '{{ session('success') }}',
+            type: 'success',
+            });
+        @endif
+</script>
 @stack('scripts')

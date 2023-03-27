@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ShortcutLinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('layouts.backend');
 });
 Auth::routes();
-Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('/', [ShortcutLinkController::class, 'index'])->name('home');
+Route::resource('shortcut-links', ShortcutLinkController::class);
+Route::post('shortcut-links/getAll', [ShortcutLinkController::class, 'getAll'])->name('shortcut-links.getAll');
+Route::get('/{uuid}', [ShortcutLinkController::class, 'redirect'])->name('shortcut-links.redirect');
+
