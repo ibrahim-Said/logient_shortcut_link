@@ -17,7 +17,7 @@ class ShortcutLinkController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','activityLog'])->except("redirect");
     }
     /**
      * Display a listing of the resource.

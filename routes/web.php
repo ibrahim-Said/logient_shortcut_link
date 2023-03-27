@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.backend');
-});
+
 Auth::routes();
 Route::get('/', [ShortcutLinkController::class, 'index'])->name('home');
 Route::resource('shortcut-links', ShortcutLinkController::class);
