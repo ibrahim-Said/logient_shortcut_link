@@ -126,4 +126,13 @@ class ShortcutLinkTest extends TestCase
         $this->assertEquals($newShortcutLink->link,$updatedShortcutLink->link);
         $response->assertSessionDoesntHaveErrors();
     }
+    public function test_user_can_delete_shortcut_link()
+    {
+        $user = User::factory()->create();
+        $newShortcutLink = ShortcutLink::factory()->create();
+        $response = $this->actingAs($user)->delete(route('shortcut-links.destroy',$newShortcutLink->id));
+        $shortcutLink=ShortcutLink::find($newShortcutLink->id);
+        $this->assertEmpty($shortcutLink);
+        $response->assertSuccessful();
+    }
 }
