@@ -25,7 +25,7 @@ class ShortcutLinkRequest extends FormRequest
     public function rules()
     {
         return [
-            "name"=>["required",new MustHasFiveShortcutLink(auth()->user())],
+            "name"=>(is_null(request('shortcutLink'))) ? ["required",new MustHasFiveShortcutLink(auth()->user())] : "required",
             "link"=>"required"
         ];
     }
