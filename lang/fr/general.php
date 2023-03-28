@@ -34,6 +34,14 @@ return [
     "Url"=>"Url",
     "Date"=>"Date",
     "activity-logs"=>"traçabilité",
-    "list of activity logs"=>"Liste des journaux d'activité"
+    "list of activity logs"=>"Liste des journaux d'activité",
+    "Login"=>"Connexion",
+    "Register"=>"S'inscrire",
+    "Email Address"=>"Adresse Email",
+    "Password"=>"Mot de passe",
+    "Remember Me"=>"Souviens de moi",
+    "Forgot Your Password?"=>"Mot de passe oublié?",
+    "Password confirmation"=>"Confirmation mot de passe",
+    "Has account"=>"Tu as un compte"
 
 ];

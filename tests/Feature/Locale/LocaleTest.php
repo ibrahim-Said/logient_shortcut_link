@@ -15,10 +15,11 @@ class LocaleTest extends TestCase
      *
      * @return void
      */
-    public function test_user_cant_set_locale_when_not_authenticated()
+    public function test_user_can_set_locale_when_not_authenticated()
     {
-        $response = $this->get(route('locale.set',['locale'=>'fr']));
-        $response->assertRedirect('/login');
+        $response = $this->get(route('locale.set',['locale'=>'en']));
+        $response->assertRedirect('/');
+        $this->assertEquals('en',session()->get('locale'));
     }
     public function test_user_can_set_locale_when_authenticated()
     {

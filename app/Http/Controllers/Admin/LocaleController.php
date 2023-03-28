@@ -10,7 +10,7 @@ class LocaleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['activityLog','auth']);
+        //$this->middleware(['auth']);
     }
     /**
      * Display a listing of the resource.

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group([
-    "middleware"=>"setLocale"
+    "middleware"=>["setLocale","activityLog"]
 ],function(){
     Auth::routes();
     Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');

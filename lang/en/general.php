@@ -34,6 +34,14 @@ return [
     "Url"=>"Url",
     "Date"=>"Date",
     "activity-logs"=>"Activity logs",
-    "list of activity logs"=>"List of activity logs"
+    "list of activity logs"=>"List of activity logs",
+    "Login"=>"Login",
+    "Register"=>"Register",
+    "Email Address"=>"Email Address",
+    "Password"=>"Password",
+    "Remember Me"=>"Remember Me",
+    "Forgot Your Password?"=>"Forgot Your Password?",
+    "Has account"=>"Has account",
+    "Password confirmation"=>"Password confirmation"
 
 ];

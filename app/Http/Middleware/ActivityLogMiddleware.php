@@ -18,16 +18,14 @@ class ActivityLogMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\Auth::check()) {
-            $currentUserInfo = Location::get(request()->ip());
-            ActivityLog::create([
-                'url' =>request()->url(),
-                'ip' => request()->ip(),
-                'country'=>optional($currentUserInfo)->countryName,
-                'agent' => request()->header('user-agent'),
-                'user_id' => auth()->ID()
-            ]);
-        }
+        $currentUserInfo = Location::get(request()->ip());
+        ActivityLog::create([
+            'url' => request()->url(),
+            'ip' => request()->ip(),
+            'country' => optional($currentUserInfo)->countryName,
+            'agent' => request()->header('user-agent'),
+            'user_id' => (\Auth::check()) ? auth()->ID() : null
+        ]);
         return $next($request);
     }
 }
