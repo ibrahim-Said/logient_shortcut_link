@@ -42,6 +42,7 @@ return [
     "Remember Me"=>"Remember Me",
     "Forgot Your Password?"=>"Forgot Your Password?",
     "Has account"=>"Has account",
-    "Password confirmation"=>"Password confirmation"
-
+    "Password confirmation"=>"Password confirmation",
+    "Save"=>"Save",
+    "Cancel"=>"Cancel"
 ];

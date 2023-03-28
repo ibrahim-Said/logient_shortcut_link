@@ -23,7 +23,7 @@ Route::group([
     Route::get('/activity-logs', [ActivityLogController::class, 'index'])->name('activity-logs.index');
     Route::post('activity-logs/getAll', [ActivityLogController::class, 'getAll'])->name('activity-logs.getAll');
     Route::get('/', [ShortcutLinkController::class, 'index'])->name('home');
-    Route::get('/home', [ShortcutLinkController::class, 'index']);
+    Route::get('/home', [ShortcutLinkController::class, 'index'])->name('home');
     Route::resource('shortcut-links', ShortcutLinkController::class);
     Route::get('/locale/{locale}', [LocaleController::class, 'setLocale'])->name('locale.set');
     Route::post('shortcut-links/getAll', [ShortcutLinkController::class, 'getAll'])->name('shortcut-links.getAll');

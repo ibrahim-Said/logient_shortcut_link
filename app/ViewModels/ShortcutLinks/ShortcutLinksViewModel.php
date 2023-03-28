@@ -65,6 +65,12 @@ class ShortcutLinksViewModel extends ViewModel
                 $this->thirdTitle = __('general.list of shortcut links');
                 $this->DataTableTitle = __('general.list of shortcut links');
                 break;
+            case 'home':
+                $this->mainTitle =__('general.list of shortcut links');
+                $this->secondTitle = __('general.Dashboard');
+                $this->thirdTitle = __('general.list of shortcut links');
+                $this->DataTableTitle = __('general.list of shortcut links');
+                break;
             case 'shortcut-links.create':
                 $this->mainTitle = __('general.Add shortcut link');
                 $this->secondTitle =  __('general.Dashboard');

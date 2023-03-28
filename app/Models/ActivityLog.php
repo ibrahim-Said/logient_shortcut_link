@@ -21,6 +21,7 @@ class ActivityLog extends Model
     }
 
     public function scopeOfUser($query,$user){
-        return $query->where('user_id',$user->id);
+        //return $query->where('user_id',$user->id);
+        return $query;
     }
 }

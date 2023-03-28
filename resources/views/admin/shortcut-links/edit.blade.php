@@ -10,7 +10,7 @@
                         @csrf
                         @method('put')
                         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }} row">
-                            <label class="col-sm-2 col-form-label" for="name">{{__('Name')}} <span class="text-danger">*</span></label>
+                            <label class="col-sm-2 col-form-label" for="name">{{__('general.Name')}} <span class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($shortcutLink) ? $shortcutLink->name : '') }}">
                                 @error('name')
@@ -24,7 +24,7 @@
                         <div class="hr-line-dashed"></div>
 
                         <div class="form-group {{ $errors->has('link') ? 'has-error' : '' }} row">
-                            <label class="col-sm-2 col-form-label" for="description">{{__('Link')}} <span class="text-danger">*</span></label>
+                            <label class="col-sm-2 col-form-label" for="description">{{__('general.Link')}} <span class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" id="link" name="link" class="form-control" value="{{ old('link', isset($shortcutLink) ? $shortcutLink->link : '') }}">
                                 @error('link')
@@ -36,8 +36,8 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <a class="btn btn-white btn-sm" href="{{ route("shortcut-links.index") }}">Cancel</a>
-                                <button class="btn btn-primary btn-sm" type="submit">Enregistrer</button>
+                                <a class="btn btn-white btn-sm" href="{{ route("shortcut-links.index") }}">{{__('general.Cancel')}}</a>
+                                <button class="btn btn-primary btn-sm" type="submit">{{__('general.Save')}}</button>
                             </div>
                         </div>
                     </form>

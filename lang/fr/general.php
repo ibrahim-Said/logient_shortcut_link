@@ -42,6 +42,8 @@ return [
     "Remember Me"=>"Souviens de moi",
     "Forgot Your Password?"=>"Mot de passe oublié?",
     "Password confirmation"=>"Confirmation mot de passe",
-    "Has account"=>"Tu as un compte"
+    "Has account"=>"Tu as un compte",
+    "Save"=>"Enregistrer",
+    "Cancel"=>"Cancel"
 
 ];
