@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Auth;
+namespace Tests\Feature\ShortcutLink;
 
 use App\Models\ShortcutLink;
 use App\Models\User;
